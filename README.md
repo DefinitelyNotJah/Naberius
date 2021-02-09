@@ -1,5 +1,6 @@
 # Naberius 
 Naberius is an info-security discord bot with tons of features and commands that allows you to solve CTF challenges with ease through discord.
+
 ![alt text](https://media.discordapp.net/attachments/674375343309586432/808745226553262090/artworks-000114315459-0hce9o-t500x500.jpg?width=440&height=440 "Naberius")
 ## Setup & Configuration
 ### Installation
@@ -23,6 +24,7 @@ pastebin_apikey | Your [Pastebin](https://www.pastebin.com)'s API Key
 censys_apiid | Your [Censys](https://censys.io/)'s API ID
 censys_secret | Your [Censys](https://censys.io/)'s Secret Key
 Everything is absolutely free and you should not pay for access.
+
 If you want, you can go the extra mile and pay for the API usage for better performance etc.. But I do not recommend doing that.
 ### Setup & Run
 ```bash
