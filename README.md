@@ -26,8 +26,8 @@ mapbox_access_token | Your [Mapbox](https://www.mapbox.com)'s access token
 pastebin_apikey | Your [Pastebin](https://www.pastebin.com)'s API Key
 censys_apiid | Your [Censys](https://censys.io/)'s API ID
 censys_secret | Your [Censys](https://censys.io/)'s Secret Key
-Everything is absolutely free and you should not pay for access.
 
+Everything is absolutely free and you should not pay for access.
 If you want, you can go the extra mile and pay for the API usage for better performance etc.. But I do not recommend doing that.
 ### Setup & Run
 ```bash
