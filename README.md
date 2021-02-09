@@ -4,6 +4,7 @@ Naberius is an info-security discord bot with tons of features and commands that
 <p align="center">
   <img src="https://media.discordapp.net/attachments/674375343309586432/808745226553262090/artworks-000114315459-0hce9o-t500x500.jpg?width=440&height=440" alt="Naberius"/>
 </p>
+
 ## Setup & Configuration
 ### Installation
 ```bash
