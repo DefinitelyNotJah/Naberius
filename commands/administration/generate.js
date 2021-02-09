@@ -5,7 +5,7 @@ const generateString = require('../../functions/generateString')
 module.exports= {
   name: 'generate',
   category: 'administration',
-  description: 'Generate a token for X amount of days.',
+  description: 'Generate a token.',
   run: async(client,message,args,guild) => {
     if(message.author.id != config.admin_id)
       return

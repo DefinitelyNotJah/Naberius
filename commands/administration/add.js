@@ -4,7 +4,7 @@ const config = require('../../config.json')
 module.exports= {
   name: 'add',
   category: 'administration',
-  description: 'Add a mentioned user to subscribed users for 10 days.',
+  description: 'Add a mentioned user to subscribed users.',
   run: async(client,message,args,guild) => {
     if(message.author.id != config.admin_id)
       return
@@ -13,7 +13,7 @@ module.exports= {
       let muteinfoembed = new Discord.MessageEmbed()
         .setTitle("Command: add")
         .setDescription(
-          `**Description:** Add a mentioned user to subscribed users for 10 days. \n` +
+          `**Description:** Add a mentioned user to subscribed users. \n` +
             "**Usage:**\n" +
             "-add [user]\n" 
         )

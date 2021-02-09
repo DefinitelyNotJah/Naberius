@@ -7,14 +7,14 @@ const authenticate = require('../../authentication/authenticate')
 module.exports= {
   name: 'resolve',
   category: 'security',
-  description: 'Resolves an domain name to find out the real IP.',
+  description: 'Resolves a domain name to find out the real IP.',
   run: async(client,message,args,guild) => {
     // MESSAGES
     if (!args[0]) {
       let muteinfoembed = new Discord.MessageEmbed()
         .setTitle("Command: resolve")
         .setDescription(
-          `**Description:** Resolves an domain name to find out the real IP. \n` +
+          `**Description:** Resolves a domain name to find out the real IP. \n` +
             "**Usage:**\n" +
             "-resolve [domain]\n" 
         )

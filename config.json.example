@@ -1,0 +1,9 @@
+{
+	"admin_id" : "",
+	"discord_token" : "",
+	"mapbox_access_token" : "",
+	"mapbox_zoom_value" : "11,5",
+	"pastebin_apikey" : "",
+	"censys_apiid" : "",
+	"censys_secret" : ""
+}

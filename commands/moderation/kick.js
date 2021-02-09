@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 module.exports= {
   name: 'kick',
   category: 'moderation',
-  description: 'kick a members',
+  description: 'kick a member',
   run: async(client,message,args,guild) => {
 
     let kicked = message.mentions.users.first() || client.users.resolve(args[0]);
