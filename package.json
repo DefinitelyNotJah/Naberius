@@ -1,0 +1,30 @@
+{
+  "name": "gcbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "ascii-table": "0.0.9",
+    "axios": "^0.20.0",
+    "capture-phantomjs": "^1.4.5",
+    "colors": "^1.4.0",
+    "dbip": "^1.0.0",
+    "discord.js": "^12.3.1",
+    "ffmpeg-static": "^4.2.7",
+    "lowdb": "^1.0.0",
+    "net-scan": "^0.1.1",
+    "node-json-db": "^1.1.0",
+    "opusscript": "0.0.7",
+    "pastebin-js": "^1.0.5",
+    "yt-search": "^2.3.3",
+    "ytdl-core": "^3.4.2",
+    "ytdl-core-discord": "^1.2.4"
+  }
+}
