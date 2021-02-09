@@ -1,7 +1,9 @@
 # Naberius 
 Naberius is an info-security discord bot with tons of features and commands that allows you to solve CTF challenges with ease through discord.
 
-![alt text](https://media.discordapp.net/attachments/674375343309586432/808745226553262090/artworks-000114315459-0hce9o-t500x500.jpg?width=440&height=440 "Naberius")
+<p align="center">
+  <img src="https://media.discordapp.net/attachments/674375343309586432/808745226553262090/artworks-000114315459-0hce9o-t500x500.jpg?width=440&height=440" alt="Naberius"/>
+</p>
 ## Setup & Configuration
 ### Installation
 ```bash
@@ -33,14 +35,14 @@ If you want, you can go the extra mile and pay for the API usage for better perf
 ## Commands
 Default prefix is `-`, you can change it in `./events/guild/message.js`
 ### Help
-Command 
---- |
-`crack` |
-`fun` | 
-`help` | 
-`mod` | 
-`payment` | 
-`security` | 
+Command | Action
+--- | ---
+`crack` | Shows Crack help commands
+`fun` | Shows Fun help commands
+`help` |  Shows major/global help commands
+`mod` | Shows moderation help commands
+`payment` | Shows payment help commands
+`security` | Shows security help commands
 ### Crack
 Command | Action
 --- | --- 
