@@ -6,6 +6,13 @@ module.exports= {
   category: 'fun',
   description: 'I swear to God I was forced to make this.',
   run: async(client,message,args,guild) => {
+    if (message.channel.nsfw == false) {
+      const errorembed2 = new Discord.MessageEmbed()
+        .setTitle(`This is not an NSFW channel!!!`)
+        .setDescription(`No hentai hahahaha get bonked you horny boi`)
+        .setColor("#2C2F33");
+      return message.channel.send(errorembed2);
+    }
     const picture = await axios.get("https://neko-love.xyz/api/v1/nekolewd")
     if(picture.data.code == "200")
     {
