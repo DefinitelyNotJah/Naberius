@@ -1,4 +1,4 @@
-const axios = require('axios')
+const exec = require('ssh-exec')
 const serverList = require('../ddos.json')
 
 let arr = serverList.servers
@@ -6,7 +6,7 @@ let res = []
 var timeserv
 var endserv
 var startserv
-module.exports = (_params) => {
+module.exports = (command) => {
 	return new Promise( (resolve, reject) => {
 	    var index = 0;
 
@@ -21,39 +21,32 @@ module.exports = (_params) => {
 	            return
 	        }
 
-
 	        startserv = new Date().getTime();
-	        axios.get(arr[index].link, {
-	        	params : _params
-	        }).then( (res) => {
-	        	endserv = new Date().getTime();
+            exec(command, {
+				user: arr[index].user,
+				host: arr[index].host,
+				password: arr[index].password,
+			}, (err, stdout, stderr) => {
+				endserv = new Date().getTime();
 				timeserv = endserv - startserv;
-				res.push({
-					index : index,
-					server : arr[index].link,
-					success : true,
-					error : '',
-					code : res.success,
-					msg : res.message,
-					time : timeserv
-				})
+				if(err) {
+					res.push({
+						index : index,
+						success : false,
+						error : err,
+						time : timeserv
+					})
+				} else {
+					res.push({
+						index : index,
+						success : true,
+						error : '',
+						time : timeserv
+					})
+				}
 				++index;
 	            next()
-	        }).catch( (err) => {
-	        	endserv = new Date().getTime();
-				timeserv = endserv - startserv;
-				res.push({
-					index : index,
-					server : arr[index].link,
-					success : false,
-					error : err.message,
-					code : res.success,
-					msg : res.message,
-					time : timeserv
-				})
-				++index;
-	            next()
-	        })
+			})
 	    }
 
 	    next();

