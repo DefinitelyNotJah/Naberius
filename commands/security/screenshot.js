@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const capture = require('capture-phantomjs')
+const capture = require('phantomjs-prebuilt')
 const fs = require('fs')
 
 const authenticate = require('../../authentication/authenticate')

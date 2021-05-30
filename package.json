@@ -23,6 +23,7 @@
     "node-json-db": "^1.1.0",
     "opusscript": "0.0.7",
     "pastebin-js": "^1.0.5",
+    "phantomjs-prebuilt": "^2.1.16",
     "ssh-exec": "^2.0.0",
     "yt-search": "^2.3.3",
     "ytdl-core": "^4.8.2",
