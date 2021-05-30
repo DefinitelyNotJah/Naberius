@@ -25,7 +25,7 @@
     "pastebin-js": "^1.0.5",
     "ssh-exec": "^2.0.0",
     "yt-search": "^2.3.3",
-    "ytdl-core": "^3.4.2",
+    "ytdl-core": "^4.8.2",
     "ytdl-core-discord": "^1.2.4"
   }
 }
