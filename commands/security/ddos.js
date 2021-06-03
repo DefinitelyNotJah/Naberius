@@ -14,6 +14,7 @@ async function stop_ddos_attack(message)
   clearTimeout(distributed_timeout)
 
   await launch("./stopdos.sh");
+  beingused = false
   const DOSEmbed3 = new Discord.MessageEmbed()
   .setColor('#2C2F33')
   .setTitle('Attack has been stopped')
@@ -99,8 +100,9 @@ module.exports= {
     const shellPayload = `screen -S ddosing_shit -dm ${payload}`
     beingused = true
     let result = await launch(shellPayload)
+    console.log(JSON.stringify(result))
     const count = result.filter((v) => {
-      v.error
+      v.success
     }).length
     const DOSEmbed2 = new Discord.MessageEmbed()
     .setColor('#2C2F33')
