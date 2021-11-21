@@ -7,7 +7,6 @@ module.exports= {
   run: async(client,message,args,guild) => {
     let successfulembed = new Discord.MessageEmbed()
       .setTitle(`Help menu | Payment`)
-      .setDescription(`Contact DefinitelyNotJah for premium access`)
       .addFields(
         { name: '-redeem', value: 'Redeem a token to subscribe.'},
         { name: '-purchase', value: 'Purchase a subscription plan.'},

@@ -86,7 +86,6 @@ module.exports= {
       })
       let successfulembed = new Discord.MessageEmbed()
         .setTitle(`Results has been found`)
-        .setDescription(`Contact DefinitelyNotJah for premium access`)
         .addFields(...fields)
         .setColor("#2C2F33");
     

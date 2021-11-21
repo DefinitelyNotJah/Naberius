@@ -7,7 +7,6 @@ module.exports= {
   run: async(client,message,args,guild) => {
     let successfulembed = new Discord.MessageEmbed()
       .setTitle(`Help menu | Moderation commands`)
-      .setDescription(`Contact DefinitelyNotJah for premium access`)
       .addFields(
         { name: '-ban', value: 'Ban a member, optional time limit.'},
         { name: '-unban', value: 'Unban a member.'},

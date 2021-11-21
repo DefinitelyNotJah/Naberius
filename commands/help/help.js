@@ -7,7 +7,6 @@ module.exports= {
   run: async(client,message,args,guild) => {
     let successfulembed = new Discord.MessageEmbed()
       .setTitle(`Help menu | General`)
-      .setDescription(`Contact DefinitelyNotJah for premium access`)
       .addFields(
         { name: '-help', value: 'Shows general help menu.'},
         { name: '-mod', value: 'Shows moderation commands.'},

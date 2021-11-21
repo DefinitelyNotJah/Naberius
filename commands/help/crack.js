@@ -7,7 +7,6 @@ module.exports= {
   run: async(client,message,args,guild) => {
     let successfulembed = new Discord.MessageEmbed()
       .setTitle(`Help menu | Cryptography commands`)
-      .setDescription(`Contact DefinitelyNotJah for premium access`)
       .addFields(
         { name: '-encryptbase64', value: 'Encrypts text to base64.'},
         { name: '-decryptbase64', value: 'Decrypts base64 to UTF-8.'},

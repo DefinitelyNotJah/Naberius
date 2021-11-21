@@ -52,7 +52,6 @@ module.exports= {
 
         .setColor('#2C2F33')
         .setTitle('DNS Lookup')
-        .setDescription('Contact DefinitelyNotJah for premium access')
         .addFields(
           { name: 'IP Address : ', value: info["IP Address"], inline : true},
           { name: 'Address type : ', value: info["Address type"], inline : true},

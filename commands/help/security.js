@@ -7,7 +7,6 @@ module.exports= {
   run: async(client,message,args,guild) => {
     let successfulembed = new Discord.MessageEmbed()
       .setTitle(`Help menu | Security commands`)
-      .setDescription(`Contact DefinitelyNotJah for premium access`)
       .addFields(
         { name: '-lookup', value: 'Looks up an IP or a domain name.'},
         { name: '-scan', value: 'Scans an IP/domain name for ports in range 1-9999.'},

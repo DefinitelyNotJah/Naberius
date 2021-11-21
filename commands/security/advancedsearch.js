@@ -82,7 +82,6 @@ module.exports= {
       let element = r.data[0]["fields"]
       let successfulembed = new Discord.MessageEmbed()
         .setTitle(`Results has been found`)
-        .setDescription(`Contact DefinitelyNotJah for premium access`)
         .addFields(
           { name: 'Source', value: element.domain, inline : true},
           { name: 'Email', value: element.email, inline : true},
