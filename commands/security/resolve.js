@@ -50,8 +50,8 @@ module.exports= {
     const buf = Buffer.from(`${config.censys_apiid}:${config.censys_secret}`, 'ascii');
     defaultHeaders.authorization = `Basic ${buf.toString('base64')}`;
 
-    axios.post("https://censys.io/api/v1/search/ipv4", {
-        'query' : args[0],
+    axios.post("https://search.censys.io/api/v2/hosts/search", {
+        'q' : args[0],
         'page' : 1,
         'flatten' : false
       }, {
@@ -59,14 +59,17 @@ module.exports= {
       }
     ).then( (r) => {
       let fields = []
-      r.data.results.forEach( (e) => {
+      r.data.result?.hits?.forEach( (e) => {
+        let aux = e.services.map( (item) => {
+                return `PORT ${item.port} ${item.transport_protocol} ${item.service_name}`;
+        }).join('\n');
         fields.push({
           name : `${e.ip} (${e.location.country_code})`,
-          value : e.protocols.join('\n'),
+          value : aux,
           inline: true
         })
       })
-      if(r.data.status != 'ok')
+      if(r.data.status.toLowerCase() != 'ok')
       {
         let unsuccessfulembed = new Discord.MessageEmbed()
           .setTitle(`No results has been found.`)
@@ -76,13 +79,14 @@ module.exports= {
       }
       let successfulembed = new Discord.MessageEmbed()
         .setTitle(`Results has been found`)
-        .setDescription(`Number of found results : ${r.data.results.length}\n` +
+        .setDescription(`Number of found results : ${r.data.result?.hits?.length}\n` +
           `Please use -lookup to confirm`)
         .addFields(...fields)
         .setColor("#2C2F33");
     
       return message.channel.send(successfulembed);
     }).catch( (er) => {
+        console.log(er);
       let errorembed = new Discord.MessageEmbed()
       .setTitle(`A server error has occurred, please try again later.`)
       .setColor("#2C2F33");
